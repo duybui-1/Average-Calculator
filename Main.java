@@ -12,22 +12,32 @@ import java.util.Scanner;
     
     do{
       System.out.println("Input: ");
-      grade = input.nextLine();
+      grade = input.nextLine().toUpperCase();
       
-            if(grade.equals(reset)){
-            total = 0;
-            counter = 0;
-            System.out.println("The program has reset");
-            continue;
-            } else {}
-            
-      double parseGrade = Double.parseDouble(grade);
-      total = total + parseGrade;
+           if(grade.equals(reset)){
+           total = 0;
+           counter = 0;
+           System.out.println("The program has reset");
+           continue;
+           } else {}
+      
+              if(!grade.equals(reset)){
+                 try{
+                 double parseGrade = Double.parseDouble(grade);    
+                 total = total + parseGrade;
+                } catch(NumberFormatException e){
+                  System.out.println("Sorry, that input is invalid. Please enter a numerical value.");
+                  continue;
+                }
+                  total = total;
+                  counter = counter;
+              } else{}
+    
       counter++;
       average = total/counter;
       System.out.println("So far you have inputted: " + counter + " grades(s)");
       System.out.println("Your current grade average is: " + average);
+     
     }while (counter < 100);
-    
   }
 }
