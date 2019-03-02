@@ -23,7 +23,7 @@ import java.util.Scanner;
                double parseRawgrade = Double.parseDouble(rawGrade); // turns string value of the raw grade to a double value to be used in calculations
                System.out.println("Input the weight of the raw grade value in percent (ex. 45%):");
                multiplier = input.nextLine();
-               shortMultiplier = multiplier.substring(0, multiplier.length()-1); //takes off the "%" by shortening the string, this allows the String to be converted to a primative double value
+               shortMultiplier = multiplier.replace("%", ""); //takes off the "%" by removing the character, this allows the String to be converted to a Double value
                double parseMultiplier = Double.parseDouble(shortMultiplier); //turns string value of the weighted multiplier to a double value to be used in calculations
                parseMultiplier = parseMultiplier/100; // conversion from percentage to decimal
                weightGrade = parseRawgrade*parseMultiplier; // this operation multiplies the grade with its weight to get the weighted grade value
