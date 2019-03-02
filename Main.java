@@ -29,8 +29,6 @@ import java.util.Scanner;
                   System.out.println("Sorry, that input is invalid. Please enter a numerical value.");
                   continue;
                 }
-                  total = total;
-                  counter = counter;
               } else{}
     
       counter++;
