@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
- public class Main{
+ public class weighted{
   public static void main(String[] args) {
     System.out.println("Input up to 100 numbers to be averaged. The program will keep track as you go. Type in 'CLEAR' to reset the program!");
     Scanner input = new Scanner(System.in);
@@ -40,20 +40,20 @@ import java.util.Scanner;
      
       }while (counter < 100); //loops for 100 values input 
     }else{
-            if(!waverage.equals(yes)){ //statement for if the answer is 'no'
-              if(!waverage.equals(no)){ // in case the answer is not 'yes' , and also not 'no'
+            if(waverage.equals(no)){ //statement for if the answer is 'no'
                 do{
-                  System.out.println("Please respond with either 'yes' or 'no'");
-                  break;
-                }while (!waverage.equals(no)); // probably have to add a try catch statement here
-            }else{
-                do{
-                  System.out.println("We will calculate your normal average then.");
-                  continue;
+                     System.out.println("We will calculate your normal average then.");
+                     continue;
                 }while (!waverage.equals(no)); 
-               
-        } // closes else statement
-      } // closes if(!waverage.equals(yes))
+            }else{
+                if(!waverage.equals(no) || !waverage.equals(yes)){
+                     do{
+                        System.out.println("Please respond with either 'yes' or 'no'");
+                        break;
+                     }while (!waverage.equals(no));
+          }//closes if(!waverage.equals(no) || !waverage.equals(yes))
+        }//closes else statement
+      } // closes if(waverage.equals(no))
     } // closes else statement
   } // closes public static void main(String[] args)
 } // closes public class Main{
