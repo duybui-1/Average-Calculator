@@ -12,16 +12,16 @@ import java.util.Scanner;
     
     do{
       System.out.println("Input: ");
-      grade = input.nextLine().toUpperCase();
+      grade = input.nextLine();
       
-           if(grade.equals(reset)){
+           if(grade.equalsIgnoreCase(reset)){
            total = 0;
            counter = 0;
            System.out.println("The program has reset");
            continue;
            } else {}
       
-              if(!grade.equals(reset)){
+              if(!grade.equalsIgnoreCase(reset)){
                  try{
                  double parseGrade = Double.parseDouble(grade);    
                  total = total + parseGrade;
